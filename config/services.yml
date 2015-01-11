@@ -1,0 +1,16 @@
+services:
+    tlg.sliding_headline.functions:
+        class: tlg\sliding_headline\core\sliding_headline
+        arguments:
+            - @cache
+            - @config
+            - @dbal.conn
+            - @template
+            - %core.root_path%
+            - %core.php_ext%
+    tlg.sliding_headline.listener:
+        class: tlg\sliding_headline\event\listener
+        arguments:
+            - @tlg.sliding_headline.functions
+        tags:
+            - { name: event.listener }

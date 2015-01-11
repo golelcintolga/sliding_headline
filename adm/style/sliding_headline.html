@@ -1,0 +1,102 @@
+<!-- INCLUDE overall_header.html -->
+<a name="maincontent"></a>
+	<h1>{L_ACP_SLIDING_HEADLINE}&nbsp;{MANSET_VERSION}</h1>
+	<p>{L_MANSET_EXPLAIN}</p>
+<!-- IF S_MANSETLER -->
+<!-- IF S_EDIT_MOD -->
+	<a href="{U_BACK}" style="float: {S_CONTENT_FLOW_END};">&laquo; {L_BACK}</a><br />
+	<!-- IF S_ERROR -->
+		<div class="errorbox">
+			<h3>{L_WARNING}</h3>
+			<p>{ERROR_MSG}</p>
+		</div>
+	<!-- ENDIF -->
+	<form id="acp_manset" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_MANSET_EKLE}</legend>
+	<dl>
+		<dt><label for="manset_name">{L_MANSET_NAME}:</label></dt>
+		<dd><input class="medium" name="manset_name" type="text" id="manset_name" value="{MANSET_NAME}" maxlength="150" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="manset_pic">{L_MANSET_PIC}:</label><br /><span>{L_MANSET_PIC_EXPLAIN}</span></dt>
+		<dd><textarea id="manset_pic" rows="8" cols="60" name="manset_pic" value="">{MANSET_PIC}</textarea></dd>
+	</dl>
+	<dl>
+		<dt><label for="manset_url">{L_MANSET_URL}:</label><br /><span>{L_MANSET_URL_EXPLAIN}</span></dt>
+		<dd><textarea id="manset_url" rows="8" cols="60" name="manset_url" value="">{MANSET_URL}</textarea></dd>
+	</dl>
+	</fieldset>
+	
+	<fieldset>
+	<p class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+	</p>
+	</fieldset>
+{S_FORM_TOKEN}
+	</form>
+<!-- ELSE -->
+	<form id="acp_manset" method="post" action="{U_ACTION}">
+	<fieldset>
+
+		<fieldset class="quick" style="float: {S_CONTENT_FLOW_BEGIN};">
+		<input class="button2" name="add" type="submit" value="{L_MANSET_EKLE}" />
+		</fieldset>
+		<table cellspacing="1" style="clear:both;">
+		<thead>
+		<tr>
+			<th>{L_MANSET_NAME}</th>
+			<th style="text-align: center;" colspan="2">{L_OPTIONS}</th>
+			<th style="text-align: center;">{L_MARK}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN manset -->
+			<!-- IF manset.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+				<td style="width: 70%;"><!-- IF manset.MOD_ACCESS --> <span style="color : red;" title="{L_VISIBLE_TO_ADMIN}">{manset.MANSET_NAME}</span><!-- ELSE -->{manset.MANSET_NAME}<!-- ENDIF --></td>
+				<td style="text-align: center;"><a href="{manset.U_EDIT}">{L_EDIT}</a>&nbsp;</td>
+				<td style="text-align: center;"><a href="{manset.U_DELETE}">{L_DELETE}</a>&nbsp;</td>
+				<td style="text-align: center;"><input type="checkbox" class="radio" name="mark[]" value="{manset.MANSET_ID}" /></td>
+			</tr>
+		<!-- END manset -->
+		</tbody>
+		</table>
+		<fieldset class="quick" style="float: {S_CONTENT_FLOW_BEGIN};">
+			<input class="button2" name="add" type="submit" value="{L_MANSET_EKLE}" />
+		</fieldset>	
+	</fieldset>
+	<fieldset class="quick" style="float: {S_CONTENT_FLOW_END};">
+		<select name="action">{S_MOD_OPTIONS}</select>
+		<input class="button2" name="submit" type="submit" value="{L_SUBMIT}" />
+		<p class="small"><a href="#" onclick="marklist('acp_manset', 'mark', true);">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('acp_manset', 'mark', false);">{L_UNMARK_ALL}</a></p>
+{S_FORM_TOKEN}
+	</fieldset>
+	</form>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF S_MANSET_SETTINGS -->
+<form id="acp_manset" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_ACP_HEADLINE_CONFIG}</legend>
+		<dl>
+			<dt><label for="manset_index">{L_MANSET_ENABLE}</label></dt>
+			<dd><input type="radio" class="radio" id="manset_index" name="manset_index" value="1" <!-- IF MANSET_INDEX -->checked="checked"<!-- ENDIF -->/> {L_ON} &nbsp; 
+				<input type="radio" class="radio" name="manset_index" value="0" <!-- IF not MANSET_INDEX -->checked="checked"<!-- ENDIF --> /> {L_OFF}</dd>
+		</dl>
+		<dl>
+			<dt><label for="manset_height">{L_MANSET_MAX_SIZE}:</label><br /><span>{L_MANSET_MAX_SIZE_EXPLAIN}</span></dt>
+			<dd><input class="tiny" name="manset_height" type="text" id="manset_height" value="{MANSET_HEIGHT}" maxlength="3" /> <input class="tiny" name="manset_width" type="text" id="manset_width" value="{MANSET_WIDTH}" maxlength="3" disabled="disabled"/ style="display:none;"></dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<p class="submit-buttons">
+			
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+			{S_FORM_TOKEN}
+		</p>
+	</fieldset>
+</form>
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

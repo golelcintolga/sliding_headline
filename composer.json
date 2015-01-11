@@ -1,0 +1,30 @@
+{
+	"name": "tlg/sliding_headline",
+	"type": "phpbb-extension",
+	"description": "Sliding Headline on the index page.",
+	"homepage": "https://github.com/golelcintolga/sliding_headline",
+	"version": "1.0.0",
+	"time": "2015-01-11",
+		"keywords": ["phpbb", "extension", "sliding", "headline"],
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "Tolga",
+			"username": "porsuk",
+			"email": "porsuk@hayatbanaguzel.hol.es",
+			"homepage": "http://hayatbanaguzel.hol.es"
+			}],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "Sliding Headline",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.2,<3.2.*@dev"
+      },
+		"version-check": {
+			"host": "golelcintolga.github.io",
+			"directory": "/sliding_headline",
+			"filename": "versions.json"
+		}
+	}
+}

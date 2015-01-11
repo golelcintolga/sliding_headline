@@ -1,0 +1,17 @@
+<!-- IF MANSET_DISPLAY -->
+<!-- INCLUDEJS jcarousellite_1.0.1.min.js -->
+		<script type="text/javascript">
+	// <![CDATA[
+	$( document ).ready(function() {
+		$(".mansetler").jCarouselLite({
+			btnNext: "#manset_sonraki",
+			btnPrev: "#manset_onceki"
+		});
+	});
+	$( document ).ready(function(){
+		var $divgenislik=$("div.mansetler").width()+82;
+	$("#manset_tasiyici").css({'width':$divgenislik})
+	});
+	// ]]>
+	</script>
+<!-- ENDIF -->

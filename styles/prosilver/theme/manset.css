@@ -1,0 +1,88 @@
+#manset_tasiyici{
+	background-color:#B6C8DD;
+	border:3px solid;
+	border-color:#027BB8;
+	border-radius:4px;
+	position:relative;
+	margin:0 auto;
+}
+#mt_inner{
+	background-color:#CFE1F6;
+	margin:0 35px;
+	border-left:1px solid;
+	border-left-color:#AABCC6;
+	border-right:1px solid;
+	border-right-color:#AABCC6;
+}
+#manset_hizaliyici{
+	overflow:hidden;
+	margin:0 5px;
+}
+.mansetler{
+	 margin:0 auto !important;
+}
+
+.mansetler ul{
+	/* [disabled]width:200%; */
+}
+li.manset_ogeleri{
+	background-color: #F0EEDB;
+	border: 1px solid #999;
+	padding: 1px;
+	margin: 5px 1px;
+	border-radius: 4px 4px 4px 4px;
+	float:left;
+}
+li.manset_ogeleri div {
+	display:block;
+	position:relative;
+}
+li.manset_ogeleri div a {
+	display:block;
+}
+li.manset_ogeleri div a img{border-radius: 3px;
+}
+.manset_aciklama {
+	background: url("./images/manset_aciklama_bg.png") repeat 0 0;
+	color: #F5F5F5;
+	display: none;
+	padding: 5px 0;
+	position: absolute;
+	border-radius: 3px 3px 0 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+li.manset_ogeleri:hover .manset_aciklama { display:block;}
+#manset_sonraki {
+	background:url("./images/mb_sol.gif") no-repeat 0 0;
+	border:none;
+	outline:none;
+	width: 30px;
+	height: 42px;
+	position:absolute;
+	left:0;
+	top:50%;
+	margin-top:-21px;
+}
+#manset_onceki {
+	background:url("./images/mb_sag.gif") no-repeat 0 0;
+	border:none;
+	outline:none;
+	width: 30px;
+	height: 42px;
+	position:absolute;
+	right:0;
+	top:50%;
+	margin-top:-21px;
+}
+#manset_sonraki:hover,#manset_onceki:hover { background-position: 0 bottom; cursor:pointer;}
+
+.temizle:after{
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+}
